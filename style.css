@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f4f1;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #3c6e47;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+@media only screen and (max-width: 600px) {
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 9px;
+    }
+  }
+
+nav ul li a:hover {
+    color: #f0f4f1;
+}
+
+/* Banner Section */
+.banner {
+    background-image: url('DALL·E\ 2024-11-04\ 13.00.05\ -\ A\ nature-inspired\ background\ image\ of\ a\ beautiful\ green\ farm\ field\ with\ a\ clear\ blue\ sky\,\ sunlight\ shining\ through.\ The\ landscape\ is\ vibrant\ with\ rows.webp');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.banner h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: blue;
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: blue;
+}
+
+.buttons button {
+    background-color: #ffcc00;
+    border: none;
+    color: #3c6e47;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttons button:hover {
+    background-color: #f1b800;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.feature {
+    text-align: center;
+    max-width: 250px;
+}
+
+.feature img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    color: #3c6e47;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #555555;
+}
+
+.Learn {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    font-size: 26px;
+}
+
+.moreinfo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    list-style: decimal;
+    text-align: center;
+    padding: 23px;
+}
+
+.moreinfo li {
+    text-align: center;
+}
+
+.moreinfo p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.div {
+    color: gray;
+    height: 2px;
+    width: 100%;
+}
+
+#reviews {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+
+    margin: 20px 0;
+}
+
+#reviews h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.review {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #4CAF50;
+}
+
+.rating {
+    font-size: 20px;
+    color: #ffcc00;
+    /* Gold color for stars */
+    margin-bottom: 10px;
+}
+
+.star {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.review-text {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.review-author {
+    text-align: right;
+    font-size: 14px;
+    color: wheat;
+}

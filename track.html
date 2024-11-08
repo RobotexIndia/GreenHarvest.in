@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+    href="DALL·E 2024-09-18 19.11.28 - A clean and modern logo for 'GreenHarvest' featuring natural, eco-friendly elements. The logo should have a vibrant green color palette to symbolize g.webp">
+    <title>Live Product Tracking</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f7f6;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2em;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .tracking-container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: relative;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0;
+            background-color: #4caf50;
+            border-radius: 5px;
+            animation: progressAnimation 10s linear infinite;
+        }
+
+        @keyframes progressAnimation {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* Moving Vehicle Icon */
+        .vehicle {
+            width: 50px;
+            position: absolute;
+            top: -20px;
+            left: 0;
+            animation: vehicleMove 10s linear infinite;
+        }
+
+        @keyframes vehicleMove {
+            0% { left: 0; }
+            100% { left: calc(100% - 50px); }
+        }
+
+        /* Tracking Steps */
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .step {
+            text-align: center;
+            color: #666;
+        }
+
+        .step.complete {
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        /* Estimated Delivery Section */
+        .delivery-info {
+            margin-top: 20px;
+            text-align: center;
+            color: #333;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .status {
+            color: #4caf50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Live Product Tracking</h1>
+
+    <div class="tracking-container">
+        <!-- Progress Bar and Moving Vehicle -->
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+            <img src="https://img.icons8.com/ios-filled/50/4caf50/delivery.png" alt="Vehicle Icon" class="vehicle">
+        </div>
+
+        <!-- Tracking Steps -->
+        <div class="steps">
+            <div class="step complete">Order Placed</div>
+            <div class="step complete">Dispatched</div>
+            <div class="step">In Transit</div>
+            <div class="step">Out for Delivery</div>
+            <div class="step">Delivered</div>
+        </div>
+
+        <!-- Estimated Delivery Info -->
+        <div class="delivery-info">
+            Estimated Delivery: <span class="status">Tomorrow by 5 PM</span>
+        </div>
+    </div>
+
+</body>
+</html>

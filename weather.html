@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenHarvest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="DALL·E 2024-09-18 19.11.28 - A clean and modern logo for 'GreenHarvest' featuring natural, eco-friendly elements. The logo should have a vibrant green color palette to symbolize g.webp">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background: url(bg-image.jpg) no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            width: 100%;
+            background-color: rgba(108, 99, 255, 0.8);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4a48cc;
+        }
+
+        /* Hamburger Menu for Mobile */
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(108, 99, 255, 0.9);
+                text-align: center;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 600px;
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .input-group {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            flex: 1;
+            padding: 12px;
+            border-radius: 25px;
+            border: 2px solid #ccc;
+            outline: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control:focus {
+            border-color: #6c63ff;
+            box-shadow: 0px 6px 10px rgba(108, 99, 255, 0.2);
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #6c63ff, #5b5eff);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+            margin-left: 10px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #5b5eff, #4a48cc);
+            box-shadow: 0px 6px 10px rgba(91, 94, 255, 0.3);
+        }
+
+        .weather-status {
+            text-align: center;
+            color: #333;
+        }
+
+        #image-icon {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <a href="#" class="hamburger" onclick="toggleMenu()">&#9776;</a>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="ft.html">Farming Tips</a></li>
+                <li><a href="weather.html">Weather Updates</a></li>
+                <li><a href="review.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Weather Search Form -->
+    <div class="container">
+        <form>
+            <div class="input-group">
+                <input id="city-name" type="text" class="form-control" placeholder="Enter a location for Weather ...">
+                <button onclick="searchTemperature()" type="button" class="btn">Search</button>
+            </div>
+        </form>
+        
+        <!-- Weather Status Display -->
+        <div class="weather-status">
+            <img id="image-icon" src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+            <h1 id="city">Weather</h1>
+            <h3><span id="temp"></span>&deg;C</h3>
+            <h1 id="weather">Clouds</h1>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        const API_KEY = `14951c93f3d11e8ac8bed96dd90e8bc7`;
+
+        const searchTemperature = () => {
+            const city = document.getElementById('city-name').value;
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+            fetch(url)
+                .then(res => res.json())
+                .then(data => displayTemperature(data));
+        }
+
+        const setInnerText = (id, text) => {
+            document.getElementById(id).innerText = text;
+        }
+
+        const displayTemperature = temperature => {
+            setInnerText('city', temperature.name);
+            setInnerText('temp', temperature.main.temp);
+            setInnerText('weather', temperature.weather[0].main);
+
+            const url = `http://openweathermap.org/img/wn/${temperature.weather[0].icon}@2x.png`;
+            document.getElementById('image-icon').setAttribute('src', url);
+        }
+    </script>
+</body>
+</html>
+

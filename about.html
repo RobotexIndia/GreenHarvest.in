@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenHarvest</title>
+    <link rel="icon" href="DALL·E 2024-09-18 19.11.28 - A clean and modern logo for 'GreenHarvest' featuring natural, eco-friendly elements. The logo should have a vibrant green color palette to symbolize g.webp">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Container to hold the background with opacity */
+        body {
+            position: relative;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+       
+
+        /* Background image with lower opacity using ::before */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('DALL·E 2024-11-04 16.30.01 - Create a warm, inviting background image for a website designed to help farmers. The scene should show a lush, green field under a clear sky, with gol.webp');
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.8; /* Adjust opacity as needed */
+            z-index: -1; /* Place behind content */
+        }
+      
+        /* Main content styling */
+        main {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="ft.html">Farming Tips</a></li>
+                <li><a href="weather.html">Weather Updates</a></li>
+                <li><a href="review.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <span class="Learn">Our Mission</span>
+        <div class="moreinfo">
+            <p>At GreenHarvest, we are dedicated to supporting farmers by providing essential information about fertilizers and best agricultural practices. Our mission is to empower farmers with the knowledge they need to maximize their yields, improve soil health, and sustain their farming practices for the long term.</p>
+        </div>
+        
+        <span class="Learn" style="text-align: center;">What We Offer</span>
+        <div class="moreinfo">
+            <p>Our website offers a comprehensive range of resources, including:</p>
+            <p>Detailed guides on various types of fertilizers and their applications.</p>
+        </div>
+        
+        <span class="Learn">Our Commitment</span>
+        <div class="moreinfo">
+            <p>We are committed to making a positive impact on agriculture by providing farmers with up-to-date, accurate, and practical information.</p>
+        </div>
+    </main>
+</body>
+
+</html>
